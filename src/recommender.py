@@ -7,6 +7,12 @@ from explore_data import load_data
 from features import build_genre_matrix
 from similarity import build_similarity_matrix
 
+def get_recommendations(title: str, n: int = 5):
+    """
+    Return a list of recommended movie titles for the given movie.
+    """
+    # temporary simple version so the app can run
+    return [f"Recommendation {i+1} for {title}" for i in range(n)]
 
 def find_movie_index(title: str, movies: pd.DataFrame) -> int:
     """Return the row position of a movie (case-insensitive exact title match).
@@ -43,7 +49,7 @@ def recommend(
     ranked = np.argsort(-scores, kind="stable")
     ranked = ranked[ranked != idx][:top_n]  # drop the movie itself
 
-    result = movies.iloc[ranked][["title", "genres"]].copy()
+    result = movies.iloc[ranked][["movieId", "title", "genres"]].copy()
     result["similarity"] = scores[ranked].round(3)
     return result.reset_index(drop=True)
 
