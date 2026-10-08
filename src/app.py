@@ -102,4 +102,4 @@ else:
 
 # Footer
 st.divider()
-st.caption("Built by [Your Name](https://your-portfolio-link.com) | Data from MovieLens | Images from TMDB. This product uses the TMDB API but is not endorsed or certified by TMDB.")
+st.caption("Built by [the greatestdev](https://github.com/thegreatestdev-debug) | Data from MovieLens | Images from TMDB. This product uses the TMDB API but is not endorsed or certified by TMDB.")
