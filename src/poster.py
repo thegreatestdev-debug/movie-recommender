@@ -2,7 +2,7 @@
 
 import pandas as pd
 import requests
-
+from download_data import ensure_dataset
 from explore_data import DATA_DIR
 
 TMDB_MOVIE_URL = "https://api.themoviedb.org/3/movie/{tmdb_id}"
