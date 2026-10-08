@@ -1,5 +1,5 @@
 """Streamlit dashboard for the content-based movie recommender."""
-
+TMDB_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2N2Q5NDI1YzkwY2FmOGViYTNlMGM0NGUxNmJmYTliMSIsIm5iZiI6MTc5MTMyNDU4MC4wNDQsInN1YiI6IjZhYzU3MWE0M2FmMWFmZTkxOTY0ZWRmNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YDDrw40-RAYrnjgF0wpm5XYifbIbsgQlmyc4fa5SNuk"
 import streamlit as st
 from explore_data import load_data
 from features import build_genre_matrix
