@@ -6,6 +6,15 @@ import pandas as pd
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "ml-latest-small"
 
+from download_data import ensure_dataset
+
+
+def load_data() -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Read movies.csv and ratings.csv into DataFrames."""
+    ensure_dataset()
+    movies = pd.read_csv(DATA_DIR / "movies.csv")
+    ratings = pd.read_csv(DATA_DIR / "ratings.csv")
+    return movies, ratings
 
 def load_data() -> tuple[pd.DataFrame, pd.DataFrame]:
     """Read movies.csv and ratings.csv into DataFrames."""
