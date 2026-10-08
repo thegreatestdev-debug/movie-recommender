@@ -35,6 +35,12 @@ def extract_dataset() -> None:
     with zipfile.ZipFile(ZIP_PATH, "r") as zf:
         zf.extractall(DATA_DIR)
     print(f"Extracted to {EXTRACTED_DIR}")
+def ensure_dataset() -> None:
+    """Download and extract the dataset only if it isn't already on disk."""
+    if (EXTRACTED_DIR / "movies.csv").exists():
+        return
+    download_dataset()
+    extract_dataset()
 
 
 if __name__ == "__main__":
