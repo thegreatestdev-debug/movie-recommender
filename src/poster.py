@@ -7,6 +7,13 @@ from explore_data import DATA_DIR
 
 TMDB_MOVIE_URL = "https://api.themoviedb.org/3/movie/{tmdb_id}"
 IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w185"
+from download_data import ensure_dataset
+
+
+def load_links() -> pd.DataFrame:
+    """movieId -> tmdbId lookup from links.csv (some tmdbIds are missing)."""
+    ensure_dataset()
+    return pd.read_csv(DATA_DIR / "links.csv").set_index("movieId")
 
 
 def load_links() -> pd.DataFrame:
